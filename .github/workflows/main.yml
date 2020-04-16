@@ -1,4 +1,4 @@
-- name: setup-php
+  name: setup-php
   uses: khs1994-docker/actions-setup-php@0.0.1
   with:
     # PHP version
