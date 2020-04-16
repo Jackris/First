@@ -1,0 +1,9 @@
+- name: setup-php
+  uses: khs1994-docker/actions-setup-php@0.0.1
+  with:
+    # PHP version
+    php_version: # optional, default is 7.3.8
+    # php image type, fpm composer or swoole
+    php_type: # optional, default is fpm
+    # The id of the container network. The runner creates the network used by all containers in a job
+    job_container_network: # optional, default is bridge
