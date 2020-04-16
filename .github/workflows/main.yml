@@ -1,4 +1,4 @@
-- name: composer-php
+  name: composer-php
   uses: nick-zh/composer@v0.2.0
   with:
     # Action to run, e.g. install
