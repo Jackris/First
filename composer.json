@@ -4,7 +4,7 @@
     "name": "jopon/hello",
     "type": "object",
     "required": [ "name", "description" ],
-    "license": "MIT"
+    "license": "Apache-2.0",
     "properties": {
         "name": {
             "type": "string",
