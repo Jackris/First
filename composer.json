@@ -1,6 +1,6 @@
 
 {
-    "name": "Package",
+    "name": "Hello/Peter",
     "type": "object",
     "additionalProperties": false,
     "scripts": {
