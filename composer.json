@@ -3,7 +3,6 @@
 {
     "name": "jopon/hello",
     "type": "object",
-    "additionalProperties": false,
     "description": "Memes",
     "required": [ "name", "description" ],
     "license": "Apache-2.0",
