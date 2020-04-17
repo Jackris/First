@@ -49,7 +49,7 @@
         },
         "license": {
             "type": ["string", "array"],
-            "description": "PETERs."
+            "description": "Apache-2.0"
         },
         "authors": {
             "$ref": "#/definitions/authors"
