@@ -11,5 +11,4 @@ function api_request($resource, $Date) {
 $Date=16/04/2020;
 $res = api_request("XML_daily.asp?","16/04/2020");
    Echo $res;
-
 ?>
