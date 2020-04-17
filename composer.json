@@ -1,1 +1,8 @@
-test": "test.php"
+{
+    "scripts": {
+        "test": [
+            "@php script.php",
+            "phpunit"
+        ]
+    }
+}
