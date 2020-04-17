@@ -12,7 +12,8 @@ function CBR_XML_Daily_Ru() {
 
 $data = CBR_XML_Daily_Ru();
 $json_daily = file_get_contents('http://www.cbr.ru/scripts/XML_daily.asp?date_req=16/04/2020');
-echo "Обменный Курс USD на ВЧЕРА: {$json_daily->Valute->USD->Value} \n";
+$final = json_decode(file_get_contents($json_daily));
+echo "Обменный Курс USD на ВЧЕРА: {$final->Valute->USD->Value} \n";
 echo "Обменный курс USD по ЦБ РФ на сегодня: {$data->Valute->USD->Value} \n";
 echo "Обменный курс EURO по ЦБ РФ на сегодня: {$data->Valute->EUR->Value} \n";
 ?>
