@@ -4,7 +4,7 @@
     "name": "jopon/hello",
     "type": "object",
     "required": [ "name", "description" ],
-     "license": "MIT"
+    "license": "MIT"
     "properties": {
         "name": {
             "type": "string",
@@ -48,7 +48,8 @@
             "type": "string",
             "description": "Package release date, in 'YYYY-MM-DD', 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' format."
         },
-        "license": {
+        "license": "Apache-2.0"
+        {
             "type": ["string", "array"],
             "description": "Apache-2.0"
         },
