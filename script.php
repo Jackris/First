@@ -13,9 +13,7 @@ function CBR_XML_Yest_Ru() {
     $json_yest_file = __DIR__.'/yest.json';
     $json_daily = file_get_contents('http://www.cbr.ru/scripts/XML_daily.asp?date_req=14/04/2020');
     file_put_contents($json_yest_file, $json_daily);
-        if ($json_daily = file_get_contents('https://www.cbr-xml-daily.ru/daily_json.js')) {
-            file_put_contents($json_yest_file, $json_daily);
-        }
+
     return json_decode(file_get_contents($json_yest_file));
 }
 $data = CBR_XML_Daily_Ru();
