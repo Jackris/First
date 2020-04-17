@@ -3,6 +3,7 @@
 {
     "name": "jopon/hello",
     "type": "object",
+    "additionalProperties": false,
     "required": [ "name", "description" ],
     "license": "Apache-2.0",
     "properties": {
