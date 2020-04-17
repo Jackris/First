@@ -3,7 +3,6 @@
 {
     "name": "jopon/hello",
     "type": "object",
-    "additionalProperties": true,
     "required": [ "name", "description" ],
     "properties": {
         "name": {
@@ -50,7 +49,7 @@
         },
         "license": {
             "type": ["string", "array"],
-            "description": "License name. Or an array of license names."
+            "description": "PETERs."
         },
         "authors": {
             "$ref": "#/definitions/authors"
