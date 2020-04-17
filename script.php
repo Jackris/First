@@ -1,15 +1,17 @@
 <?php
-define("BASE_URL", "http://www.cbr.ru/scripts/");
 
-function api_request($resource, $Date) {
-    
-    $full_url = BASE_URL."$resource";
-    $options = array(
-        DATE_REQ=> $Date
-   );
+function CBR_XML_Daily_Ru() {
+    $json_daily_file = __DIR__.'/daily.json';
+    if (!is_file($json_daily_file) || filemtime($json_daily_file) < time() - 3600) {
+        if ($json_daily = file_get_contents('https://www.cbr-xml-daily.ru/daily_json.js')) {
+            file_put_contents($json_daily_file, $json_daily);
+        }
+    }
+
+    return json_decode(file_get_contents($json_daily_file));
 }
-$Date="16/04/2020";
-$res = api_request("XML_daily.asp?","16/04/2020");
-   Echo "HEllo";
-printf($res);
+
+$data = CBR_XML_Daily_Ru();
+
+echo "Обменный курс USD по ЦБ РФ на сегодня: {$data->Valute->USD->Value}";
 ?>
