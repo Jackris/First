@@ -1,10 +1,9 @@
 
 
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
     "name": "jopon/hello",
     "type": "object",
-    "additionalProperties": false,
+    "additionalProperties": true,
     "required": [ "name", "description" ],
     "properties": {
         "name": {
