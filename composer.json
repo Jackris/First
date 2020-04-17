@@ -1,7 +1,7 @@
 
 {
     "name": "Hello/Peter",
-    "description": "Mem/Oh."
+    "description": "Mem/Oh",
     "type": "object",
     "additionalProperties": false,
     "scripts": {
