@@ -48,7 +48,7 @@
             "type": "string",
             "description": "Package release date, in 'YYYY-MM-DD', 'YYYY-MM-DD HH:MM:SS' or 'YYYY-MM-DDTHH:MM:SSZ' format."
         },
-        "license": "Apache-2.0",
+        "license":
         {
             "type": ["string", "array"],
             "description": "Apache-2.0"
