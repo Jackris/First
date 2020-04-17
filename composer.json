@@ -3,7 +3,11 @@
     "name": "ello/eter",
     "description": "mem/oh",
     "type": "object",
-    "additionalProperties": false,
+   
+    "license": {
+            "type": ["string", "array"],
+            "description": "my licence "
+        },
     "scripts": {
         "test": [
             "@php script.php",
