@@ -2,7 +2,7 @@
 
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "name": "Package",
+    "name": "jopon/hello",
     "type": "object",
     "additionalProperties": false,
     "required": [ "name", "description" ],
