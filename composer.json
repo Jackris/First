@@ -3,6 +3,8 @@
     "name": "ello/eter",
     "description": "mem/oh",
     "type": "object",
+    "additionalProperties": false,
+    "required": [ "name", "description" ],
     "properties": {
     "license": {
             "type": ["string", "array"],
