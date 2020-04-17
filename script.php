@@ -12,7 +12,6 @@ function CBR_XML_Daily_Ru() {
 
 $data = CBR_XML_Daily_Ru();
 
-echo "Обменный курс USD по ЦБ РФ на сегодня: {$data->Valute->USD->Value}";
-echo "Обменный курс EURO по ЦБ РФ на сегодня: {$data->Valute->EUR->Value}";
-echo " ";
+echo "Обменный курс USD по ЦБ РФ на сегодня: {$data->Valute->USD->Value} \n";
+echo "Обменный курс EURO по ЦБ РФ на сегодня: {$data->Valute->EUR->Value} \n";
 ?>
