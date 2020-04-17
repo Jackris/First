@@ -7,7 +7,7 @@
     "license": {
             "type": ["string", "array"],
             "description": "my licence "
-        },
+        }
     },
     "scripts": {
         "test": [
