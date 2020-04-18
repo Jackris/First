@@ -28,7 +28,7 @@ if ( ($yest->Valute->USD->Value) < ($today->Valute->EUR->Value) )
 $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req=22/01/2007');
     echo $xml->ValCurs->Valute['ID =="R01235"'] ;
 echo '/n';
-print_r($xml->ValCurs->Valute['ID =="R01235"'];
+print_r($xml->ValCurs->Valute['ID =="R01235"']);
  
 ?>
 '▲'
