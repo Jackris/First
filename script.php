@@ -26,7 +26,7 @@ echo "Обменный курс USD по ЦБ РФ на сегодня: {$today-
 echo "Обменный курс EURO по ЦБ РФ на сегодня: {$today->Valute->EUR->Value} \n";
 
 $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req=22/01/2007');
-    echo $xml->ValCurs[Date];
+    echo $xml->ValCurs;
 
 ?>
 '▲'
