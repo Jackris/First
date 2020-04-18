@@ -19,7 +19,7 @@ function CBR_XML_Yest_Ru() {
 }
 $data = CBR_XML_Daily_Ru();
 $final = CBR_XML_Yest_Ru();
-echo "Обменный Курс USD на ВЧЕРА: {$final->Value} \n";
+echo "Обменный Курс USD на ВЧЕРА: {$final} \n";
 echo "Обменный курс USD по ЦБ РФ на сегодня: {$data->Valute->USD->Value} \n";
 echo "Обменный курс EURO по ЦБ РФ на сегодня: {$data->Valute->EUR->Value} \n";
 print_r($final);
