@@ -12,7 +12,7 @@ function getvalute($date)
     
   foreach($xml->children() as $items) {
       $nitems=$items->CharCode;
-      if ($nitems = "USD") {
+      if ($nitems == "USD") {
          echo $items->Name;   
           echo "\n"; 
       }
