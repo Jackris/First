@@ -5,7 +5,7 @@ function getvalute($date)
     $valueUSD = $xml->Valute[4]->Value; // Значение доллара
     $valuseEUR = $xml->Valute[5]->Value; // Значение евро
     
-    $ndate = getdate(mktime(0, 0, 0, date('m'), date('d') - 1, date('Y')));
+    $ndate = getdate(mktime(0, 0, 0, $date('m'), $date('d') - 1, $date('Y')));
     echo $ndate;
     echo "\n";
     echo "USD = ".$valueUSD ."\n";
