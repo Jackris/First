@@ -7,13 +7,13 @@ function getvalute($date)
     
 $datetime = new DateTime($date);
 $datetime->modify('-1 day');
-$ndate = $datetime;//->format('d-m-Y');
+$ndate = $datetime->format('d-m-Y');
     echo $ndate;
     echo "\n";
           
     echo "USD = ".$valueUSD ."\n";
 }
-getvalute("01/02/2007");
+getvalute("05/12/2007");
 /*$date = "22/01/2007";
 $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
 $valueUSD = $xml->Valute[4]->Value;
