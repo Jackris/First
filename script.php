@@ -4,7 +4,9 @@ function getvalute($date)
     $ndate = new DateTime($date);
     $ndate->modify('+1 day');
     echo $ndate->format('d/m/Y');
-    $date = new DateTime($date)->format('d/m/Y') ;
+    echo "\n";
+    $date = new DateTime($date);
+    $date = $date->format('d/m/Y');
     
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
     $valueUSD = $xml->Valute[4]->Value; // Значение доллара
