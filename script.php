@@ -7,7 +7,7 @@ function getvalute($date)
     
 $datetime = new DateTime($date);
 $datetime->modify('-1 day');
-$ndate = $datetime->format('Y-m-d');
+$ndate = $datetime->format('d-m-Y');
     echo $ndate;
     echo "\n";
     echo "USD = ".$valueUSD ."\n";
