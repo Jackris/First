@@ -1,13 +1,16 @@
 <?php
 function getvalute($date)
 {
+    $ndate = new DateTime($date);
+    $ndate->modify('+1 day');
+    echo $ndate->format('d/m/Y');
+    $date = new DateTime($date)->format('d/m/Y') ;
+    
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
     $valueUSD = $xml->Valute[4]->Value; // Значение доллара
     $valuseEUR = $xml->Valute[5]->Value; // Значение евро
     
-$ndate = new DateTime($date);
-$ndate->modify('+1 day');
-echo $ndate->format('d/m/Y');
+
           
     echo "USD = ".$valueUSD ."\n";
 }
