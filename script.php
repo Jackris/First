@@ -7,14 +7,10 @@ function getvalute($date)
     
 $datetime = new DateTime($date);
 $datetime->modify('-1 day');
-$ndate = $datetime->format('d-m-Y');
+$ndate = $datetime;//->format('d-m-Y');
     echo $ndate;
     echo "\n";
-    $ndate = substr(date('Y-m-d H:i:s', strtotime($date->date.'1 day')),0,10);
-    echo $ndate;
-    echo "\n";
-    
-    
+          
     echo "USD = ".$valueUSD ."\n";
 }
 getvalute("01/02/2007");
