@@ -11,7 +11,7 @@ function CBR_XML_Daily_Ru() {
 }
 function CBR_XML_Yest_Ru() {
     $json_yest_file = __DIR__.'/yest.json';
-    if ($json_daily = file_get_contents('http://www.cbr.ru/scripts/XML_daily.asp?date_req=14/04/2020')) {
+    if ($json_daily = file_get_contents('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req=22/01/2007')) {
             file_put_contents($json_yest_file, $json_daily);
         }
     
@@ -19,7 +19,7 @@ function CBR_XML_Yest_Ru() {
 }
 $data = CBR_XML_Daily_Ru();
 $final = CBR_XML_Yest_Ru();
-echo "Обменный Курс USD на ВЧЕРА: {$final} \n";
+echo "Обменный Курс USD на ВЧЕРА: {$final->Valute->USD->Value} \n";
 echo "Обменный курс USD по ЦБ РФ на сегодня: {$data->Valute->USD->Value} \n";
 echo "Обменный курс EURO по ЦБ РФ на сегодня: {$data->Valute->EUR->Value} \n";
 ?>
