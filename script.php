@@ -6,7 +6,7 @@ function getvalute($date)
     $valuseEUR = $xml->Valute[5]->Value; // Значение евро
     
     $ndate = new DateTime('-3 days');
-    echo $ndate->format('Y-m-d');
+    echo $ndate->format('Y-m-d') . "\n";
     
     echo "USD = ".$valueUSD ."\n";
 }
