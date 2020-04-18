@@ -15,14 +15,11 @@ function CBR_XML_Yest_Ru() {
             file_put_contents($json_yest_file, $json_daily);
         }
     
-    
-    
-
     return json_decode(file_get_contents($json_yest_file));
 }
 $data = CBR_XML_Daily_Ru();
 $final = CBR_XML_Yest_Ru();
-echo "Обменный Курс USD на ВЧЕРА: {$final->Valute->USD->Value} \n";
+echo "Обменный Курс USD на ВЧЕРА: {$final} \n";
 echo "Обменный курс USD по ЦБ РФ на сегодня: {$data->Valute->USD->Value} \n";
 echo "Обменный курс EURO по ЦБ РФ на сегодня: {$data->Valute->EUR->Value} \n";
 ?>
