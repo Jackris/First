@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: HTMLstarter
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -27,9 +27,9 @@ jobs:
       uses: chabad360/htmlproofer@v1.1
       with:
     # The directory to scan
-      directory: 
+      directory: form.html
     # HTMLProofer options
-    arguments: # optional
+      arguments: # optional
       
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
