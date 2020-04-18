@@ -12,7 +12,7 @@ function getvalute($date)
     
     foreach($xml->Valcurs->Valute as $item) {
     echo ("Attribute: " . $item->attributes()->myattribute .");
-    echo ("3Ha4eHue: " . $item->Valute . "nn");
+    echo ("Value " . $item->Valute . "nn");
     }
     
 
