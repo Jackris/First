@@ -4,7 +4,10 @@ function getvalute($date)
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
     $valueUSD = $xml->Valute[4]->Value; // Значение доллара
     $valuseEUR = $xml->Valute[5]->Value; // Значение евро
-	$ndate = strtotime($date);
+    $ndate = '2016-09-02';
+$datetime = new DateTime($date);
+$datetime->modify('+1 day');
+$ndate = $datetime->format('Y-m-d');
     echo $ndate;
     echo "\n";
     echo "USD = ".$valueUSD ."\n";
