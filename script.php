@@ -10,9 +10,9 @@ function getvalute($date)
     
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
     
-    foreach($xml->Valcurs->Valute as $item) {
+    foreach($xml->Valcurs as $item) {
     echo "Attribute: " . $item->attributes()->myattribute ." ";
-    echo ("Value " . $item->Valute . "nn");
+    echo "Value " . $item->Valute . "nn";
     }
     
 
