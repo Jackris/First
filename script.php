@@ -19,7 +19,7 @@ function CBR_XML_Yest_Ru() {
 }
 $yest = CBR_XML_Daily_Ru();
 $today = CBR_XML_Yest_Ru();
-if ( ($yest->Valute->USD->Value) > ($today->Valute->EUR->Value) )
+if ( ($yest->Valute->USD->Value) < ($today->Valute->EUR->Value) )
     echo '▲';
 echo "Обменный Курс USD на ВЧЕРА: {$yest->Valute->USD->Value} \n";
 echo "Обменный курс USD по ЦБ РФ на сегодня: {$today->Valute->USD->Value} \n";
