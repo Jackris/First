@@ -6,6 +6,7 @@ function getvalute($date)
     $valuseEUR = $xml->Valute[5]->Value; // Значение евро
     
 $ndate = new DateTime($date);
+$ndate = $ndate->format('d/m/Y');
 $ndate->modify('+1 day');
 echo $ndate->format('d/m/Y');
           
