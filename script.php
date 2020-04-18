@@ -6,7 +6,7 @@ function getvalute($date)
     $valuseEUR = $xml->Valute[5]->Value; // Значение евро
     
 $datetime = new DateTime($date);
-echo $datetime;
+print_r($datetime);
     echo "\n";
 $datetime->modify('-1 day');
 $ndate = $datetime->format('d-m-Y');
