@@ -17,10 +17,12 @@ function CBR_XML_Yest_Ru() {
     
     return json_decode(file_get_contents($json_yest_file));
 }
-$data = CBR_XML_Daily_Ru();
-$final = CBR_XML_Yest_Ru();
-echo "Обменный Курс USD на ВЧЕРА: {$final->Valute->USD->Value} \n";
-echo "Обменный курс USD по ЦБ РФ на сегодня: {$data->Valute->USD->Value} \n";
-echo "Обменный курс EURO по ЦБ РФ на сегодня: {$data->Valute->EUR->Value} \n";
-print_r($final);
+$yest = CBR_XML_Daily_Ru();
+$today = CBR_XML_Yest_Ru();
+if ( ($yest->Valute->USD->Value) > ($today->Valute->EUR->Value) )
+    echo '▲';
+echo "Обменный Курс USD на ВЧЕРА: {$yest->Valute->USD->Value} \n";
+echo "Обменный курс USD по ЦБ РФ на сегодня: {$today->Valute->USD->Value} \n";
+echo "Обменный курс EURO по ЦБ РФ на сегодня: {$today->Valute->EUR->Value} \n";
+
 ?>
