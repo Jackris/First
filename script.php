@@ -27,7 +27,7 @@ $today = CBR_XML_Yest_Ru();
 
 $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req=22/01/2007');
     echo $xml->ValCurs->Valute[ID =="R01235"] ;
-echo /n;
+echo (/n);
 print_r($xml->ValCurs->Valute[ID =="R01235"]);
  //'▲'
 //'▼'
