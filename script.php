@@ -14,7 +14,7 @@ function getvalute($date)
       $nitems=$items->CharCode;
       if ($nitems == "USD") {
          echo $items->Name;   
-          echo "\n"; 
+          echo "\n HELLO !!! \n"; 
       }
     
   }
