@@ -15,7 +15,7 @@ $ndate = $datetime->format('d-m-Y');
           
     echo "USD = ".$valueUSD ."\n";
 }
-getvalute("05/12/2007");
+getvalute("29/12/2007");
 /*$date = "22/01/2007";
 $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
 $valueUSD = $xml->Valute[4]->Value;
