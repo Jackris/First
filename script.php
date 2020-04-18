@@ -9,6 +9,13 @@ function getvalute($date)
     $date = $date->format('d/m/Y');
     
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
+    
+    foreach($xml->Valcurs->Valute as $item) {
+    echo "Attribute: " . $item->attributes()->myattribute .";
+    echo "3Ha4eHue: " . $item->Valute . "nn";
+    }
+    
+
     $valueUSD = $xml->Valute[4]->Value; // Значение доллара
     $valuseEUR = $xml->Valute[5]->Value; // Значение евро
     
