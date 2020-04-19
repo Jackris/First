@@ -8,8 +8,6 @@ function getvalute($date)
     // Переводим в нормальный формат дату
     $date = new DateTime($date);
     $date = $date->format('d/m/Y');
-    echo ("\nВведенная дата:" . $date. " \n");
-    echo ("На день меньше: ". $mdate . "\n");
     //Открываем сводки центробанка на заданную дату
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
     foreach($xml->children() as $items) {
