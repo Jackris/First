@@ -51,6 +51,7 @@ function getvalute($date)
     if ( $euroyest < $eurotoday)
         echo ("На дату ".$date." курс EURO был равен: " . $eurotoday. "▲ \n");    
 }
+//Формат даты: (ММ/ДД/ГГ)
 getvalute("07/22/2010");
 ?> 
 
