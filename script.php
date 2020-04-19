@@ -31,7 +31,7 @@ function getvalute($date)
       }   
     }
     // присваивает <body text='black'>
-     $usdtoday =(float) str_replace(",", ".", "$usdtoday");
+     
     
     echo ("Вчерашний бакс:" . $usdyest. " \n");
     echo ("Сегодняшний бакс:" . $usdtoday. " \n");
