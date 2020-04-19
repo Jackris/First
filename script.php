@@ -34,12 +34,12 @@ function getvalute($date)
     echo ("Сегодняшний бакс:" . $usdtoday. " \n");
    // echo ("Вчерашний EURO:" . $euroyest. " \n");
     //echo ("Сегодняшний EURO:" . $eurotoday. " \n");
-    if ( $usdyest == $usdtoday)
-        echo ("На дату ".$date." курс доллара был равен: " . $usdtoday. " \n");
-    if ( $usdyest > $usdtoday)
-        echo ("На дату ".$date." курс доллара был равен: " . $usdtoday. "▼ \n");   
-    if ( $usdyest < $usdtoday)
-        echo ("На дату ".$date." курс доллара был равен: " . $usdtoday. "▲ \n");
+    if ( $usdyest == $usdtoday){       
+        echo ("На дату ".$date." курс доллара был равен: " . $usdtoday. " \n");}
+    if ( $usdyest > $usdtoday){
+        echo ("На дату ".$date." курс доллара был равен: " . $usdtoday. "▼ \n");   }
+    if ( $usdyest < $usdtoday){
+        echo ("На дату ".$date." курс доллара был равен: " . $usdtoday. "▲ \n");}
 }
 getvalute("07/22/2017");
 /*$date = "22/01/2007";
