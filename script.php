@@ -2,11 +2,14 @@
 function getvalute($date)
 {
     $ndate = new DateTime($date);
-    $ndate->modify('+1 day');
+    $ndate->modify('-1 day');
     echo $ndate->format('d/m/Y');
     echo "\n";
     $date = new DateTime($date);
     $date = $date->format('d/m/Y');
+    
+    echo "\n Введенная дата:" . $date. " \n";
+    echo "\n На день меньше: ". $ndate ."\n";
     
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
     
