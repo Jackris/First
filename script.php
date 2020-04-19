@@ -30,13 +30,16 @@ function getvalute($date)
           $euroyest =$items->Value;  //Переменная значения евро на день раньше 
       }   
     }
-    // присваивает <body text='black'>
-     
+    // Переводим в подходящий для сравнения тип
+    $usdtoday =(float) str_replace(",", ".", "$usdtoday");
+    $usdyest =(float) str_replace(",", ".", "$usdyest");
+    $eurotoday =(float) str_replace(",", ".", "$eurotoday");
+    $euroyest =(float) str_replace(",", ".", "$euroyest");
     
     echo ("Вчерашний бакс:" . $usdyest. " \n");
     echo ("Сегодняшний бакс:" . $usdtoday. " \n");
-   // echo ("Вчерашний EURO:" . $euroyest. " \n");
-    //echo ("Сегодняшний EURO:" . $eurotoday. " \n");
+  / echo ("Вчерашний EURO:" . $euroyest. " \n");
+    echo ("Сегодняшний EURO:" . $eurotoday. " \n");
     if ( $usdyest == $usdtoday) 
         echo ("На дату ".$date." курс доллара был равен: " . $usdtoday. " \n");
     if ( $usdyest > $usdtoday)
