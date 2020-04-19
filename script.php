@@ -14,22 +14,25 @@ function getvalute($date)
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
     foreach($xml->children() as $items) {
       if ($items->CharCode == "USD") {
-          $usdtoday =(float) $items->Value;   //Переменная значения доллара на заданную дату
+          $usdtoday = $items->Value;   //Переменная значения доллара на заданную дату
       }
       if ($items->CharCode == "EUR") {
-          $eurotoday =(float) $items->Value;  //Переменная значения евро на заданную дату 
+          $eurotoday =$items->Value;  //Переменная значения евро на заданную дату 
       }  
     }
     // Извлекаем значение Доллара на день раньше заданной даты
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $mdate);
     foreach($xml->children() as $items) {    
       if ($items->CharCode == "USD") {
-          $usdyest =(float) $items->Value;   //Переменная значения доллара на день раньше 
+          $usdyest = $items->Value;   //Переменная значения доллара на день раньше 
       }    
       if ($items->CharCode == "EUR") {
-          $euroyest =(float) $items->Value;  //Переменная значения евро на день раньше 
+          $euroyest =$items->Value;  //Переменная значения евро на день раньше 
       }   
     }
+    // присваивает <body text='black'>
+     $usdtoday =(float) str_replace(",", ".", "$usdtoday");
+    
     echo ("Вчерашний бакс:" . $usdyest. " \n");
     echo ("Сегодняшний бакс:" . $usdtoday. " \n");
    // echo ("Вчерашний EURO:" . $euroyest. " \n");
