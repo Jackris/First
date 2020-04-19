@@ -50,9 +50,9 @@ function getvalute($date)
     // Выводим значение евро
     if ( $euroyest == $eurotoday) 
         echo ("На дату ".$date." курс EURO был равен: " . $eurotoday. " \n");
-    if ( $euroyest > $usdtoday)
+    if ( $euroyest > $eurotoday)
         echo ("На дату ".$date." курс EURO был равен: " . $eurotoday. "▼ \n");  
-    if ( $euroyest < $usdtoday)
+    if ( $euroyest < $eurotoday)
         echo ("На дату ".$date." курс EURO был равен: " . $eurotoday. "▲ \n");    
 }
 getvalute("07/22/2017");
