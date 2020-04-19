@@ -9,21 +9,19 @@ function getvalute($date)
     
     echo ("\n Введенная дата:" . $date. " \n");
     echo ("\n На день меньше: ". $mdate . "\n");
-    
+    // Извлекаем значение Доллара на заданную дату
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
     foreach($xml->children() as $items) {
-    $nitems=$items->CharCode;
-      if ($nitems == "USD") {
+      if ($items->CharCode == "USD") {
           $usdtoday = $items->Value;   
       }
     }
+    // Извлекаем значение Доллара на день раньше заданной даты
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $mdate);
-    foreach($xml->children() as $items) {
-    $nitems=$items->CharCode;
-      if ($nitems == "USD") {
+    foreach($xml->children() as $items) {    
+      if ($items->CharCode == "USD") {
           $usdyest = $items->Value;   
       }    
-
     }
     echo ("\n Вчерашний бакс:" . $usdyest. " \n");
     echo ("\n Сегодняшний бакс:" . $usdtoday. " \n");
