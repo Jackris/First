@@ -53,7 +53,7 @@ function getvalute($date)
 }
 //Формат даты: (ММ/ДД/ГГ)
 getvalute("07/22/2010");
-getvalute("07/12/2010");
+getvalute("07/09/2010");
 getvalute("07/22/2013");
 ?> 
 
