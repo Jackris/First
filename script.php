@@ -14,32 +14,32 @@ function getvalute($date)
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
     foreach($xml->children() as $items) {
       if ($items->CharCode == "USD") {
-          $usdtoday = $items->Value;   //Переменная значения доллара на заданную дату
+          $usdtoday =(float) $items->Value;   //Переменная значения доллара на заданную дату
       }
       if ($items->CharCode == "EUR") {
-          $eurotoday = $items->Value;  //Переменная значения евро на заданную дату 
+          $eurotoday =(float) $items->Value;  //Переменная значения евро на заданную дату 
       }  
     }
     // Извлекаем значение Доллара на день раньше заданной даты
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $mdate);
     foreach($xml->children() as $items) {    
       if ($items->CharCode == "USD") {
-          $usdyest = $items->Value;   //Переменная значения доллара на день раньше 
+          $usdyest =(float) $items->Value;   //Переменная значения доллара на день раньше 
       }    
       if ($items->CharCode == "EUR") {
-          $euroyest = $items->Value;  //Переменная значения евро на день раньше 
+          $euroyest =(float) $items->Value;  //Переменная значения евро на день раньше 
       }   
     }
     echo ("Вчерашний бакс:" . $usdyest. " \n");
     echo ("Сегодняшний бакс:" . $usdtoday. " \n");
    // echo ("Вчерашний EURO:" . $euroyest. " \n");
     //echo ("Сегодняшний EURO:" . $eurotoday. " \n");
-    if ( $usdyest == $usdtoday){       
-        echo ("На дату ".$date." курс доллара был равен: " . $usdtoday. " \n");}
-    if ( $usdyest > $usdtoday){
-        echo ("На дату ".$date." курс доллара был равен: " . $usdtoday. "▼ \n");   }
-    if ( $usdyest < $usdtoday){
-        echo ("На дату ".$date." курс доллара был равен: " . $usdtoday. "▲ \n");}
+    if ( $usdyest == $usdtoday) 
+        echo ("На дату ".$date." курс доллара был равен: " . $usdtoday. " \n");
+    if ( $usdyest > $usdtoday)
+        echo ("На дату ".$date." курс доллара был равен: " . $usdtoday. "▼ \n");  
+    if ( $usdyest < $usdtoday)
+        echo ("На дату ".$date." курс доллара был равен: " . $usdtoday. "▲ \n");
 }
 getvalute("07/22/2017");
 /*$date = "22/01/2007";
