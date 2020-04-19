@@ -38,7 +38,7 @@ function getvalute($date)
     
     echo ("Вчерашний бакс:" . $usdyest. " \n");
     echo ("Сегодняшний бакс:" . $usdtoday. " \n");
-  / echo ("Вчерашний EURO:" . $euroyest. " \n");
+    echo ("Вчерашний EURO:" . $euroyest. " \n");
     echo ("Сегодняшний EURO:" . $eurotoday. " \n");
     if ( $usdyest == $usdtoday) 
         echo ("На дату ".$date." курс доллара был равен: " . $usdtoday. " \n");
