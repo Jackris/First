@@ -8,24 +8,28 @@ function getvalute($date)
     // Переводим в нормальный формат дату
     $date = new DateTime($date);
     $date = $date->format('d/m/Y');
-    echo ("\n Введенная дата:" . $date. " \n");
+    echo ("\nВведенная дата:" . $date. " \n");
     echo ("На день меньше: ". $mdate . "\n");
-    // Извлекаем значение Доллара на заданную дату
+    //Открываем сводки центробанка на заданную дату
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
     foreach($xml->children() as $items) {
-      if ($items->CharCode == "USD") {
+      // Извлекаем значение Доллара на заданную дату
+      if ($items->CharCode == "USD") {  
           $usdtoday = $items->Value;   //Переменная значения доллара на заданную дату
       }
+      // Извлекаем значение Евро на заданную дату
       if ($items->CharCode == "EUR") {
           $eurotoday =$items->Value;  //Переменная значения евро на заданную дату 
       }  
     }
-    // Извлекаем значение Доллара на день раньше заданной даты
+    //Открываем сводки центробанка на день раньше
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $mdate);
-    foreach($xml->children() as $items) {    
+    foreach($xml->children() as $items) {  
+        // Извлекаем значение Доллара на день раньше заданной даты
       if ($items->CharCode == "USD") {
           $usdyest = $items->Value;   //Переменная значения доллара на день раньше 
       }    
+        // Извлекаем значение Евро на день раньше заданной даты
       if ($items->CharCode == "EUR") {
           $euroyest =$items->Value;  //Переменная значения евро на день раньше 
       }   
@@ -52,7 +56,8 @@ function getvalute($date)
         echo ("На дату ".$date." курс EURO был равен: " . $eurotoday. "▲ \n");    
 }
 //Формат даты: (ММ/ДД/ГГ)
-getvalute("07/22/2010");
+$data = "07/22/2010";
+getvalute($data);
 getvalute("07/09/2010");
 getvalute("07/22/2013");
 ?> 
