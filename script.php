@@ -16,6 +16,7 @@ function getvalute($date)
       if ($nitems == "USD") {
           $usdtoday = $items->Value;   
       }
+    }
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $mdate);
     foreach($xml->children() as $items) {
     $nitems=$items->CharCode;
