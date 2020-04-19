@@ -8,8 +8,8 @@ function getvalute($date)
     $date = new DateTime($date);
     $date = $date->format('d/m/Y');
     
-    print_r "\n Введенная дата:" . $date. " \n";
-    print_r "\n На день меньше: ". $ndate . "\n";
+    print_r ("\n Введенная дата:" . $date. " \n");
+    print_r ("\n На день меньше: ". $ndate . "\n");
     
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
     
