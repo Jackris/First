@@ -11,16 +11,21 @@ function getvalute($date)
     echo ("\n На день меньше: ". $mdate . "\n");
     
     $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
-    
-  foreach($xml->children() as $items) {
-      $nitems=$items->CharCode;
+    foreach($xml->children() as $items) {
+    $nitems=$items->CharCode;
       if ($nitems == "USD") {
-         echo $items->Name;   
-          echo "\n HELLO !!! \n"; 
+          $usdtoday = $items->Value;   
       }
-    
-  }
-    
+    $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. mdate);
+    foreach($xml->children() as $items) {
+    $nitems=$items->CharCode;
+      if ($nitems == "USD") {
+          $usdyest = $items->Value;   
+      }    
+
+    }
+    echo ("\n Вчерашний бакс:" . $usdyest. " \n");
+    echo ("\n Сегодняшний бакс:" . $usdtoday. " \n");
 
     $valueUSD = $xml->Valute[4]->Value; // Значение доллара
     $valuseEUR = $xml->Valute[5]->Value; // Значение евро
