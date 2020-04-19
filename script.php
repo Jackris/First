@@ -36,10 +36,6 @@ function getvalute($date)
     $eurotoday =(float) str_replace(",", ".", "$eurotoday");
     $euroyest =(float) str_replace(",", ".", "$euroyest");
     // Сравниваем валюты в заданный день и на день раньше.
-    echo ("Вчерашний бакс:" . $usdyest. " \n");
-    echo ("Сегодняшний бакс:" . $usdtoday. " \n");
-    echo ("Вчерашний EURO:" . $euroyest. " \n");
-    echo ("Сегодняшний EURO:" . $eurotoday. " \n");
     // Выводим значение доллара
     if ( $usdyest == $usdtoday) 
         echo ("На дату ".$date." курс $ был равен: " . $usdtoday. " \n");
@@ -56,15 +52,5 @@ function getvalute($date)
         echo ("На дату ".$date." курс EURO был равен: " . $eurotoday. "▲ \n");    
 }
 getvalute("07/22/2010");
-/*$date = "22/01/2007";
-$xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
-$valueUSD = $xml->Valute[4]->Value;
-$valuseEUR = $xml->Valute[5]->Value;
-echo "USD = ".$valueUSD ."\n";
-echo "EURO = ".$valuseEUR ."\n";
-echo "\n";
-*/
- //'▲'
-//'▼'
 ?> 
 
