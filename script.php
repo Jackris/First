@@ -55,7 +55,7 @@ function getvalute($date)
     if ( $euroyest < $eurotoday)
         echo ("На дату ".$date." курс EURO был равен: " . $eurotoday. "▲ \n");    
 }
-getvalute("07/22/2017");
+getvalute("07/22/2010");
 /*$date = "22/01/2007";
 $xml = simplexml_load_file('http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req='. $date);
 $valueUSD = $xml->Valute[4]->Value;
